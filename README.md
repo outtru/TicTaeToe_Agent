@@ -70,3 +70,12 @@ In the world of AI, games are a powerful way to test decision-making and search 
 - State-Space Search: Navigating Tic-Tac-Toe game states efficiently.
 - Heuristic Evaluation: Scoring non-terminal positions for generalized boards.
 - GUI Development: Building an interactive environment for gameplay.
+
+##  Step - 1 
+- Design and architecture documentation for board representation, game rules, and AI structure.
+- Java game engine scaffolding in `java/src/main/java/com/tictactoe/`.
+- Python AI skeleton in `python/ai/`.
+- Foundation for scalable N x N board logic and terminal-state detection.
+
+## Next Step
+Start Week 2 by implementing the Minimax search loop, a refined evaluation strategy, and validation cases for a 3x3 game.
