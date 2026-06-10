@@ -46,17 +46,17 @@ class BoardEvaluator:
             return 1.0
         if winner != self.EMPTY:
             return -1.0
-        return self._heuristic_score(board, player)
+        return self._heuristic_score(board)
 
-    def _heuristic_score(self, board: BoardType, player: str) -> float:
+    def _heuristic_score(self, board: BoardType) -> float:
         size = len(board)
         player_count = 0
         opponent_count = 0
-        opponent = self.opponent(player)
+        opponent = self.opponent(self.max_player)
 
         for row in board:
             for cell in row:
-                if cell == player:
+                if cell == self.max_player:
                     player_count += 1
                 elif cell == opponent:
                     opponent_count += 1

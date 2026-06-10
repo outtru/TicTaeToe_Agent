@@ -78,4 +78,4 @@ In the world of AI, games are a powerful way to test decision-making and search 
 - Foundation for scalable N x N board logic and terminal-state detection.
 
 ## Next Step
-Start Week 2 by implementing the Minimax search loop, a refined evaluation strategy, and validation cases for a 3x3 game.
+Tighten the Minimax evaluation so leaf scores stay consistent for the maximizing player, then validate the 3x3 move selection path with a few sample positions.
