@@ -40,7 +40,7 @@ In the world of AI, games are a powerful way to test decision-making and search 
 
 ### Core Algorithm Implementation
 - Implement the basic Minimax algorithm in Python.
-- Create a general board evaluation strategy and terminal-state scoring.
+- Create a general board evaluation strategy with line-based threat scoring and terminal-state scoring.
 - Integrate the AI decision engine with the Java game state if needed.
 - Validate correctness with simple 3x3 game scenarios.
 
@@ -71,6 +71,12 @@ In the world of AI, games are a powerful way to test decision-making and search 
 - Heuristic Evaluation: Scoring non-terminal positions for generalized boards.
 - GUI Development: Building an interactive environment for gameplay.
 
+## Frontend GUI
+- React + Vite app lives in `frontend/`.
+- It provides a playable Tic-Tac-Toe board, board-size selection, and a local Minimax opponent.
+- It also shows a search visualization panel with candidate move scores, explored nodes, and pruning activity.
+- Run it with `cd frontend && npm install && npm run dev`.
+
 ##  Step - 1 
 - Design and architecture documentation for board representation, game rules, and AI structure.
 - Java game engine scaffolding in `java/src/main/java/com/tictactoe/`.
@@ -78,4 +84,4 @@ In the world of AI, games are a powerful way to test decision-making and search 
 - Foundation for scalable N x N board logic and terminal-state detection.
 
 ## Next Step
-Tighten the Minimax evaluation so leaf scores stay consistent for the maximizing player, then validate the 3x3 move selection path with a few sample positions.
+Strengthen the Minimax evaluation with line-based heuristics, then validate 3x3 move selection on positions that separate real threats from scattered pieces.
