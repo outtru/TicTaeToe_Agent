@@ -50,18 +50,31 @@ class BoardEvaluator:
 
     def _heuristic_score(self, board: BoardType) -> float:
         size = len(board)
-        player_count = 0
-        opponent_count = 0
+        line_score = 0.0
+
+        for index in range(size):
+            line_score += self._score_line([board[index][col] for col in range(size)])
+            line_score += self._score_line([board[row][index] for row in range(size)])
+
+        line_score += self._score_line([board[i][i] for i in range(size)])
+        line_score += self._score_line([board[i][size - 1 - i] for i in range(size)])
+
+        return line_score / max(2 * size + 2, 1)
+
+    def _score_line(self, line: List[str]) -> float:
         opponent = self.opponent(self.max_player)
 
-        for row in board:
-            for cell in row:
-                if cell == self.max_player:
-                    player_count += 1
-                elif cell == opponent:
-                    opponent_count += 1
+        if self.max_player in line and opponent in line:
+            return 0.0
 
-        return float(player_count - opponent_count) / max(size * size, 1)
+        max_count = line.count(self.max_player)
+        opponent_count = line.count(opponent)
+
+        if max_count > 0 and opponent_count == 0:
+            return float(max_count * (10 ** max_count))
+        if opponent_count > 0 and max_count == 0:
+            return float(-(opponent_count * (10 ** opponent_count)))
+        return 0.0
 
     def _all_equal(self, line: List[str]) -> bool:
         return len(line) > 0 and line[0] != self.EMPTY and all(cell == line[0] for cell in line)

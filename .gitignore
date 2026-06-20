@@ -1,0 +1,23 @@
+# OS junk
+.DS_Store
+
+# Python
+.venv/
+.venv-1/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Java
+target/
+*.class
+
+# React / Vite
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Editor and logs
+.vscode/
+.idea/
+*.log
